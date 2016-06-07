@@ -1,9 +1,11 @@
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+
 
 namespace MsCrmTools.UserRolesManager.AppCode
 {
@@ -48,23 +50,24 @@ namespace MsCrmTools.UserRolesManager.AppCode
                              new Relationship(principal.LogicalName + "roles_association"),
                              new EntityReferenceCollection { roleToUse.ToEntityReference() });
                     }
-                    catch (Exception error)
+                    catch
                     {
+                        // ignored
                     }
 
                     current++;
                 }
-                //service.Associate(
-                //    principal.LogicalName,
-                //    principal.Id,
-                //    new Relationship(principal.LogicalName + "roles_association"),
-                //    new EntityReferenceCollection(roles.Select(r => r.ToEntityReference()).ToList()));
             }
         }
 
         public List<Entity> GetRoles()
         {
-            return service.RetrieveMultiple(new QueryExpression("role") { ColumnSet = new ColumnSet(true) }).Entities.ToList();
+            OrganizationServiceContext org = new OrganizationServiceContext(service);
+            return (from role in org.CreateQuery("role")
+                    select new Entity("role")
+                    {
+                        Id = role.Id
+                    }).ToList();
         }
 
         public Guid GetRootBusinessUnitId()
@@ -194,8 +197,9 @@ namespace MsCrmTools.UserRolesManager.AppCode
                             new Relationship(principal.LogicalName + "roles_association"),
                             new EntityReferenceCollection { roleToUse.ToEntityReference() });
                     }
-                    catch (Exception error)
+                    catch
                     {
+                        // ignored
                     }
 
                     current++;

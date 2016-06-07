@@ -65,8 +65,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbbProxyUsage = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.chkAllowUsageStatistics = new System.Windows.Forms.CheckBox();
             this.chkClosePluginsSilently = new System.Windows.Forms.CheckBox();
+            this.chkAllowUsageStatistics = new System.Windows.Forms.CheckBox();
+            this.chkDisplayPluginsStoreOnStartup = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -86,15 +87,15 @@
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 633);
+            this.panel1.Location = new System.Drawing.Point(0, 634);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(797, 53);
+            this.panel1.Size = new System.Drawing.Size(796, 52);
             this.panel1.TabIndex = 5;
             // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(551, 13);
+            this.btnOk.Location = new System.Drawing.Point(550, 12);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(112, 35);
@@ -106,7 +107,8 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(672, 13);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(672, 12);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 35);
@@ -123,14 +125,14 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(797, 117);
+            this.pnlHeader.Size = new System.Drawing.Size(796, 117);
             this.pnlHeader.TabIndex = 6;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(15, 56);
+            this.label2.Location = new System.Drawing.Point(15, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(769, 43);
+            this.label2.Size = new System.Drawing.Size(770, 43);
             this.label2.TabIndex = 1;
             this.label2.Text = "This dialog helps you to control how plugins are displayed in the application. Yo" +
     "u can also define how to use XrmToolBox with a proxy";
@@ -139,7 +141,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lblTitle.Location = new System.Drawing.Point(13, 13);
+            this.lblTitle.Location = new System.Drawing.Point(14, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(119, 32);
             this.lblTitle.TabIndex = 0;
@@ -154,7 +156,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 117);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(797, 516);
+            this.tabControl1.Size = new System.Drawing.Size(796, 517);
             this.tabControl1.TabIndex = 7;
             // 
             // tbDisplay
@@ -164,8 +166,8 @@
             this.tbDisplay.Controls.Add(this.groupBox3);
             this.tbDisplay.Location = new System.Drawing.Point(4, 29);
             this.tbDisplay.Name = "tbDisplay";
-            this.tbDisplay.Padding = new System.Windows.Forms.Padding(3);
-            this.tbDisplay.Size = new System.Drawing.Size(789, 483);
+            this.tbDisplay.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbDisplay.Size = new System.Drawing.Size(788, 484);
             this.tbDisplay.TabIndex = 0;
             this.tbDisplay.Text = "Display";
             this.tbDisplay.UseVisualStyleBackColor = true;
@@ -177,11 +179,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rdbToolsListSmall);
             this.groupBox1.Controls.Add(this.rdbToolsListLarge);
-            this.groupBox1.Location = new System.Drawing.Point(7, 8);
+            this.groupBox1.Location = new System.Drawing.Point(8, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1175, 80);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display";
@@ -238,7 +240,7 @@
             // btnResetMuList
             // 
             this.btnResetMuList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResetMuList.Location = new System.Drawing.Point(931, 23);
+            this.btnResetMuList.Location = new System.Drawing.Point(932, 23);
             this.btnResetMuList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResetMuList.Name = "btnResetMuList";
             this.btnResetMuList.Size = new System.Drawing.Size(232, 35);
@@ -265,9 +267,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lvPlugins);
-            this.groupBox3.Location = new System.Drawing.Point(6, 181);
+            this.groupBox3.Location = new System.Drawing.Point(6, 182);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(774, 274);
+            this.groupBox3.Size = new System.Drawing.Size(774, 275);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tools list (Unchecked plugins are not displayed in XrmToolBox application)";
@@ -283,7 +285,7 @@
             this.lvPlugins.FullRowSelect = true;
             this.lvPlugins.Location = new System.Drawing.Point(3, 22);
             this.lvPlugins.Name = "lvPlugins";
-            this.lvPlugins.Size = new System.Drawing.Size(768, 249);
+            this.lvPlugins.Size = new System.Drawing.Size(768, 250);
             this.lvPlugins.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lvPlugins.TabIndex = 0;
             this.lvPlugins.UseCompatibleStateImageBehavior = false;
@@ -310,8 +312,8 @@
             this.tbProxy.Controls.Add(this.cbbProxyUsage);
             this.tbProxy.Location = new System.Drawing.Point(4, 29);
             this.tbProxy.Name = "tbProxy";
-            this.tbProxy.Padding = new System.Windows.Forms.Padding(3);
-            this.tbProxy.Size = new System.Drawing.Size(789, 483);
+            this.tbProxy.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbProxy.Size = new System.Drawing.Size(788, 484);
             this.tbProxy.TabIndex = 1;
             this.tbProxy.Text = "Proxy";
             this.tbProxy.UseVisualStyleBackColor = true;
@@ -327,7 +329,7 @@
             this.gbCustomProxy.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbCustomProxy.Location = new System.Drawing.Point(3, 31);
             this.gbCustomProxy.Name = "gbCustomProxy";
-            this.gbCustomProxy.Size = new System.Drawing.Size(783, 216);
+            this.gbCustomProxy.Size = new System.Drawing.Size(782, 215);
             this.gbCustomProxy.TabIndex = 15;
             this.gbCustomProxy.TabStop = false;
             this.gbCustomProxy.Text = "Custom proxy";
@@ -338,9 +340,9 @@
             this.panel3.Controls.Add(this.txtProxyPassword);
             this.panel3.Controls.Add(this.lblProxyUser);
             this.panel3.Controls.Add(this.lblProxyPassword);
-            this.panel3.Location = new System.Drawing.Point(0, 96);
+            this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(786, 67);
+            this.panel3.Size = new System.Drawing.Size(786, 68);
             this.panel3.TabIndex = 14;
             // 
             // txtProxyUser
@@ -427,14 +429,14 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(0, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 33);
+            this.panel2.Size = new System.Drawing.Size(786, 32);
             this.panel2.TabIndex = 13;
             // 
             // rbCustomAuthYes
             // 
             this.rbCustomAuthYes.AutoSize = true;
             this.rbCustomAuthYes.Enabled = false;
-            this.rbCustomAuthYes.Location = new System.Drawing.Point(193, 3);
+            this.rbCustomAuthYes.Location = new System.Drawing.Point(194, 3);
             this.rbCustomAuthYes.Name = "rbCustomAuthYes";
             this.rbCustomAuthYes.Size = new System.Drawing.Size(62, 24);
             this.rbCustomAuthYes.TabIndex = 0;
@@ -475,31 +477,22 @@
             "Use custom proxy"});
             this.cbbProxyUsage.Location = new System.Drawing.Point(3, 3);
             this.cbbProxyUsage.Name = "cbbProxyUsage";
-            this.cbbProxyUsage.Size = new System.Drawing.Size(783, 28);
+            this.cbbProxyUsage.Size = new System.Drawing.Size(782, 28);
             this.cbbProxyUsage.TabIndex = 14;
             this.cbbProxyUsage.SelectedIndexChanged += new System.EventHandler(this.cbbProxyUsage_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.chkDisplayPluginsStoreOnStartup);
             this.tabPage1.Controls.Add(this.chkClosePluginsSilently);
             this.tabPage1.Controls.Add(this.chkAllowUsageStatistics);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(789, 483);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(788, 484);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Miscellaneous";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // chkAllowUsageStatistics
-            // 
-            this.chkAllowUsageStatistics.AutoSize = true;
-            this.chkAllowUsageStatistics.Location = new System.Drawing.Point(15, 22);
-            this.chkAllowUsageStatistics.Name = "chkAllowUsageStatistics";
-            this.chkAllowUsageStatistics.Size = new System.Drawing.Size(553, 24);
-            this.chkAllowUsageStatistics.TabIndex = 1;
-            this.chkAllowUsageStatistics.Text = "Allow to send usage statistics (only anonymous data : plugin usage count)";
-            this.chkAllowUsageStatistics.UseVisualStyleBackColor = true;
             // 
             // chkClosePluginsSilently
             // 
@@ -511,11 +504,33 @@
             this.chkClosePluginsSilently.Text = "Do not prompt on exit when plugins are opened, close plugins silently";
             this.chkClosePluginsSilently.UseVisualStyleBackColor = true;
             // 
+            // chkAllowUsageStatistics
+            // 
+            this.chkAllowUsageStatistics.AutoSize = true;
+            this.chkAllowUsageStatistics.Location = new System.Drawing.Point(15, 22);
+            this.chkAllowUsageStatistics.Name = "chkAllowUsageStatistics";
+            this.chkAllowUsageStatistics.Size = new System.Drawing.Size(553, 24);
+            this.chkAllowUsageStatistics.TabIndex = 1;
+            this.chkAllowUsageStatistics.Text = "Allow to send usage statistics (only anonymous data : plugin usage count)";
+            this.chkAllowUsageStatistics.UseVisualStyleBackColor = true;
+            // 
+            // chkDisplayPluginsStoreOnStartup
+            // 
+            this.chkDisplayPluginsStoreOnStartup.AutoSize = true;
+            this.chkDisplayPluginsStoreOnStartup.Location = new System.Drawing.Point(15, 82);
+            this.chkDisplayPluginsStoreOnStartup.Name = "chkDisplayPluginsStoreOnStartup";
+            this.chkDisplayPluginsStoreOnStartup.Size = new System.Drawing.Size(346, 24);
+            this.chkDisplayPluginsStoreOnStartup.TabIndex = 3;
+            this.chkDisplayPluginsStoreOnStartup.Text = "Display plugins store on XrmToolBox startup";
+            this.chkDisplayPluginsStoreOnStartup.UseVisualStyleBackColor = true;
+            // 
             // OptionsDialog
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 686);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(796, 686);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.panel1);
@@ -590,5 +605,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.CheckBox chkAllowUsageStatistics;
         private System.Windows.Forms.CheckBox chkClosePluginsSilently;
+        private System.Windows.Forms.CheckBox chkDisplayPluginsStoreOnStartup;
     }
 }
